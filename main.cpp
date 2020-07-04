@@ -29,23 +29,25 @@ void getFile(std::ifstream &file) {
     }
 }
 
+
 void scanFile(std::ifstream &file) {
     int x = 0;
     std::string temp;
-    std::string text;
-    std::cout << "\n";
+    std::vector<std::string> textList;
+    std::cout << "\nScanning file...\n";
     while (file >> temp) {
-        //std::cout << temp << std::endl;
-        std::cout << temp << " ";
-        text.append(temp + " ");
+        std::cout << temp << std::endl;
+        textList.push_back(temp);
     }
-    std::cout << "\n";
-    std::cout << "Printing with function: ";
-    printFunction(text);
+    std::cout << "\n\n";
+
+    //Print vector with whitespace separarting each entry
+    
+    printVector(textList);
 
     //Testing the indexes of the string
-    for (int y = 0; y < text.length(); y++)
+    for (int y = 0; y < textList.size(); y++)
     {
-        std::cout << text[y] << " " << y << std::endl;
+        std::cout << textList[y] << " " << y << std::endl;
     }
 }
