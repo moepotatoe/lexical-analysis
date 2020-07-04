@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include "lexical.h"
+#include "lexical.cpp"
 
 void getFile(std::ifstream &file);
 void scanFile(std::ifstream &file);
@@ -32,12 +33,13 @@ void scanFile(std::ifstream &file) {
     int x = 0;
     std::string temp;
     std::vector<std::string> textList;
-    std::cout << "\nScanning file...\n";
+    std::cout << "\nScanning file with words and index numbers...\n";
     while (file >> temp) {
-        std::cout << temp << std::endl;
+        std::cout << temp << " " << x << std::endl;
+        x++;
         textList.push_back(temp);
     }
-    std::cout << "\n\n";
+    std::cout << "\n\nPrinting entire vector textList\n";
 
     //Print vector with whitespace separarting each entry
     printVector(textList);
