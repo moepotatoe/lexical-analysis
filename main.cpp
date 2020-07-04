@@ -29,9 +29,6 @@ void getFile(std::ifstream &file) {
 }
 
 void scanFile(std::ifstream &file) {
-<<<<<<< Updated upstream
-    std::cout << "TODO";
-=======
     int x = 0;
     std::string temp;
     std::vector<std::string> textList;
@@ -44,5 +41,4 @@ void scanFile(std::ifstream &file) {
 
     //Print vector with whitespace separarting each entry
     printVector(textList);
->>>>>>> Stashed changes
 }

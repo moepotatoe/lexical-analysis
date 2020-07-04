@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-#include "lexical.h"
-=======
 #include "lexical.h"
 #include <iostream>
 #include <fstream>
