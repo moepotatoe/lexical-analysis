@@ -2,8 +2,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <iomanip>
+#include <sstream>
 #include "lexical.h"
+#include "lexical.cpp"
 
 void getFile(std::ifstream &file);
 void scanFile(std::ifstream &file);
@@ -27,20 +28,31 @@ void getFile(std::ifstream &file) {
     }
 }
 
-/* Read through the file and check for arguments */
+/* Reading through file and checking each lexical argument */
 void scanFile(std::ifstream &file) {
-    std::string currToken, readLine;
-    char next;
-    std::string myNumber = "", myString = "";
-    int temp;
+    std::string readLine;
     std::vector<char> token;
-
+    char nextChar;
+    int temp;
     while(getline(file, readLine)) {
-        for (int i = 0; i < readLine.length(); i++) {
+        for(int i = 0; i < readLine.length(); i++) {
             temp = i;
-            next = readLine[i];
+            nextChar = readLine[i];
 
             token.push_back(readLine[i]);
+
+            if(isWhiteSpace(nextChar)) {
+                token.pop_back();
+                analyzeToken(token);
+                token.clear();
+            }
+            else if(isSymbol(nextChar)) {
+                token.pop_back();
+                analyzeToken(token);
+                token.clear();
+                token.push_back(nextChar);
+                token.clear();
+            }
         }
-    } 
+    }
 }
