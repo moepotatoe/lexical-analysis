@@ -1,12 +1,3 @@
-int i;
-int max;
-int sum;   
-sum = 0;
-i = 1;
-get (max);
-while (i <  max)  {
- sum = sum + i;
- i  = i + 1; 
+while(i < 5) {
+    j = test + 17;
 }
-sum = sum + max;
-put (sum);

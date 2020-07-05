@@ -2,9 +2,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <sstream>
+#include <iomanip>
 #include "lexical.h"
-#include "lexical.cpp"
 
 void getFile(std::ifstream &file);
 void scanFile(std::ifstream &file);
@@ -13,7 +12,6 @@ int main(int argc, const char** argv) {
     std::ifstream testFile;
     getFile(testFile);
     scanFile(testFile);
-    
     return 0;
 }
 
@@ -29,18 +27,20 @@ void getFile(std::ifstream &file) {
     }
 }
 
+/* Read through the file and check for arguments */
 void scanFile(std::ifstream &file) {
-    int x = 0;
-    std::string temp;
-    std::vector<std::string> textList;
-    std::cout << "\nScanning file with words and index numbers...\n";
-    while (file >> temp) {
-        std::cout << temp << " " << x << std::endl;
-        x++;
-        textList.push_back(temp);
-    }
-    std::cout << "\n\nPrinting entire vector textList\n";
+    std::string currToken, readLine;
+    char next;
+    std::string myNumber = "", myString = "";
+    int temp;
+    std::vector<char> token;
 
-    //Print vector with whitespace separarting each entry
-    printVector(textList);
+    while(getline(file, readLine)) {
+        for (int i = 0; i < readLine.length(); i++) {
+            temp = i;
+            next = readLine[i];
+
+            token.push_back(readLine[i]);
+        }
+    } 
 }
