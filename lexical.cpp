@@ -36,8 +36,8 @@ void lexer(std::string token)
         bool symbol = isSymbol(token[x]);
         if (symbol)
         {
-            std::cout<<"\n" << token[x] << "   Symbol\n";//check what symbol it is
-            break;
+            //Verify with a.txt
+            std::cout<<"\n" << token[x] << "   Symbol at line" << x;//check what symbol it is
         }
         // else {
         //     std::cout <<" Adding to temp\n";
@@ -45,7 +45,7 @@ void lexer(std::string token)
         // }
     }
     //Once a line has been read without symbols, determine whaty kind of word it is
-    determineWord(temp);
+    //determineWord(temp);
     
 }
 
