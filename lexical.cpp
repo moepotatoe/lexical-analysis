@@ -37,7 +37,7 @@ void lexer(std::string token)
         if (symbol)
         {
             //Verify with a.txt
-            std::cout<<"\n" << token[x] << "   Symbol at line" << x;//check what symbol it is
+            std::cout<<"\n" << token[x] << "   Symbol at pos" << x;//check what symbol it is
         }
         // else {
         //     std::cout <<" Adding to temp\n";
