@@ -47,16 +47,9 @@ void scanFile(std::ifstream &file) {
     //Print vector with whitespace separarting each entry
     // printVector(textList);
 
-<<<<<<< Updated upstream
-    for (int x = 0; x < textList.size(); x++)
-    {
-        lexer(textList[x]);
-    }
-=======
     // for (int x = 0; x < textList.size(); x++)
     // {
     //     lexer(textList[x]);
     // }
->>>>>>> Stashed changes
     
 }
