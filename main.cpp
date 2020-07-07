@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 #include "lexical.h"
 #include "lexical.cpp"
 
@@ -12,6 +13,7 @@ int main(int argc, const char** argv) {
     std::ifstream testFile;
     getFile(testFile);
     scanFile(testFile);
+    
     return 0;
 }
 
@@ -20,34 +22,31 @@ void getFile(std::ifstream &file) {
     std::string filename;
     std::cout << "Enter filename for lexical analysis: ";
     while(true) {
-        //std::cin >> filename;
-        
-        std::string filename = "test1.txt"; //keeping this temporarily here so its easier
+        std::cin >> filename;
         file.open(filename);
         if(!file) { std::cout << "File cannot be found. Enter valid filename: "; }
         else { break; }
     }
 }
 
-
 void scanFile(std::ifstream &file) {
     int x = 0;
     std::string temp;
     std::vector<std::string> textList;
-    std::cout << "\nScanning file...\n";
+    std::cout << "\nScanning file with words and index numbers...\n";
     while (file >> temp) {
-        std::cout << temp << std::endl;
+        std::cout << temp << " " << x << std::endl;
+        x++;
         textList.push_back(temp);
     }
-    std::cout << "\n\n";
+    std::cout << "\n\nPrinting entire vector textList\n";
 
     //Print vector with whitespace separarting each entry
-    
-    printVector(textList);
+    // printVector(textList);
 
-    //Testing the indexes of the string
-    for (int y = 0; y < textList.size(); y++)
+    for (int x = 0; x < textList.size(); x++)
     {
-        std::cout << textList[y] << " " << y << std::endl;
+        lexer(textList[x]);
     }
+    
 }

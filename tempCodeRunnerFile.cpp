@@ -1,1 +1,1 @@
-printVector
+ printVector(textList);
