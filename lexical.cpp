@@ -15,9 +15,38 @@ void printVector(std::vector<std::string> userVec)
     }
 }
 
+<<<<<<< Updated upstream
 bool isSymbol(char ch) {
     if(ch == '(' || ch == ')' || ch == ',' || ch == '{' || ch == '}' || ch == '+' ||
     ch == '-' || ch == '*' || ch == '/' || ch == '&' || ch == '!' || ch == '|' || ch == ';')
+=======
+bool isSeparator(char ch) {
+    // std::string separators = {"()[]{};"};
+    // bool symbolCheck = false;
+    // for (int x = 0; x < separators.length(); x++)
+    // {
+    //     if (separators[x] == ch)
+    //     {
+    //         symbolCheck = true;
+    //     }
+    //     else {
+    //       symbolCheck = false;
+    //     }
+    // }
+    // return symbolCheck;
+    if(ch == '(' || ch == ')' || ch == '{' || ch == '}' || ch == ';' || ch == '[' || ch == ']')
+    { return true; }
+  else { return false; }
+}
+//     if(ch == '(' || ch == ')' || ch == ',' || ch == '{' || ch == '}' || ch == '+' ||
+//     ch == '-' || ch == '*' || ch == '/' || ch == '&' || ch == '!' || ch == '|' || ch == ';')
+//     { lexeme = "symbol";
+//     return true; }
+//   else { return false; }
+
+bool isOperator(char ch) {
+    if(ch == '<' || ch == '>' || ch == '+' || ch == '-' || ch == '/' || ch == '*' || ch == ':' || ch == '=')
+>>>>>>> Stashed changes
     { return true; }
   else { return false; }
 }
@@ -30,6 +59,7 @@ void determineWord(std::string word)
 void lexer(std::string token)
 {
     std::string temp;
+<<<<<<< Updated upstream
     std::string sepTemp;
     for (int x = 0; x < token.size(); x++) //Go through each character.
     {
@@ -39,6 +69,26 @@ void lexer(std::string token)
             //Verify with a.txt
             std::cout<<"\n" << token[x] << "   Symbol at pos" << x;//check what symbol it is
         }
+=======
+    std::string lexResult = "";
+    for (int x = 0; x < token.size(); x++) //Go through each character.
+    {
+        //bool separator = isSeparator(token[x]);
+        if (bool separatorCheck = isSeparator(token[x]))
+        {
+            //Verify with a.txt, check what symbol it is
+            std::cout << token[x] << "   Separator at pos" << x << "\n";
+            //Return token[x] and string with separator
+        }
+        else if (bool operatorCheck = isOperator(token[x]))
+        {
+            std::cout << token[x] << "   Operator at pos" << x << "\n";
+            //Return token[x] and string with operator
+        }
+
+        //TODO: Identifier and integer FSMs
+
+>>>>>>> Stashed changes
         // else {
         //     std::cout <<" Adding to temp\n";
         //     //temp.append(token[x]);
@@ -46,6 +96,7 @@ void lexer(std::string token)
     }
     //Once a line has been read without symbols, determine whaty kind of word it is
     //determineWord(temp);
+<<<<<<< Updated upstream
     
 }
 
@@ -97,3 +148,7 @@ bool isSeparator(std::string userString)
         if (userVec[x] == )
     }
 }*/
+=======
+}
+
+>>>>>>> Stashed changes

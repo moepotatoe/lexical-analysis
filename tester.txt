@@ -1,0 +1,67 @@
+Enter filename for lexical analysis: test1.txt
+
+Scanning file with words and index numbers...
+int 0
+i; 1
+;   Separator at pos1
+int 2
+max; 3
+;   Separator at pos3
+int 4
+sum; 5
+;   Separator at pos3
+sum 6
+= 7
+=   Operator at pos0
+0; 8
+;   Separator at pos1
+i 9
+= 10
+=   Operator at pos0
+1; 11
+;   Separator at pos1
+get 12
+(max); 13
+(   Separator at pos0
+)   Separator at pos4
+;   Separator at pos5
+while 14
+(i 15
+(   Separator at pos0
+< 16
+<   Operator at pos0
+max) 17
+)   Separator at pos3
+{ 18
+{   Separator at pos0
+sum 19
+= 20
+=   Operator at pos0
+sum 21
++ 22
++   Operator at pos0
+i; 23
+;   Separator at pos1
+i 24
+= 25
+=   Operator at pos0
+i 26
++ 27
++   Operator at pos0
+1; 28
+;   Separator at pos1
+} 29
+}   Separator at pos0
+sum 30
+= 31
+=   Operator at pos0
+sum 32
++ 33
++   Operator at pos0
+max; 34
+;   Separator at pos3
+put 35
+(sum); 36
+(   Separator at pos0
+)   Separator at pos4
+;   Separator at pos5

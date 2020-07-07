@@ -37,16 +37,26 @@ void scanFile(std::ifstream &file) {
     while (file >> temp) {
         std::cout << temp << " " << x << std::endl;
         x++;
+        lexer(temp); //change how this works later maybe?
         textList.push_back(temp);
     }
-    std::cout << "\n\nPrinting entire vector textList\n";
+
+    //Test to print out the read in text
+    //std::cout << "\n\nPrinting entire vector textList\n";
 
     //Print vector with whitespace separarting each entry
     // printVector(textList);
 
+<<<<<<< Updated upstream
     for (int x = 0; x < textList.size(); x++)
     {
         lexer(textList[x]);
     }
+=======
+    // for (int x = 0; x < textList.size(); x++)
+    // {
+    //     lexer(textList[x]);
+    // }
+>>>>>>> Stashed changes
     
 }
